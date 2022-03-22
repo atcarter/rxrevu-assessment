@@ -1,3 +1,4 @@
+# Include the given examples for testing.
 example1 = [
   [nil, nil, nil],
   [nil, "X", nil],
@@ -52,18 +53,28 @@ def neighbor_counter(row, col, grid)
 
   for i in neighbor_rows do
     for j in neighbor_cols do
-      puts "[#{i}][#{j}]"
-      # if i != row && j != col
-        
-      #   count += 1
-      # end
+      if grid[i][j] == "X"
+        count += 1
+      end
     end
+  end
+
+  if grid[row][col] == "X"
+    count -= 1
   end
 
   count
 end
 
-ex = example1
-puts "For #{ex} there is a count of #{neighbor_counter(1, 1, ex)}."
+#Exercise
+ex = [example1, example2, example3, example4]
+for i in ex do
+  puts "For #{i} there is a count of #{neighbor_counter(1, 1, i)} around the center cell."
+end
+
+#Bonus Exercise
+for i in ex do
+  puts "Bonus: For #{i} there is a count of #{neighbor_counter(0, 0, i)} around the top left cell."
+end
 
 
