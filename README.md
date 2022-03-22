@@ -10,3 +10,7 @@ Example: the below grid should return 4 using the center cell as the target.
 | --- | ---- | --- |
 | X   | cell | X   |
 |     |      | X   |
+
+## Thought Process
+
+Rather than write two functions, I decided to start with the bonus exercise to find the pattern for this assessment. I used a scratch sheet of paper to note the coordinates of the given cell and its neighbors. For the set of row values and the set of column values, I found that I needed to subtract 1 to find the lower bound and add 1 to find the upper bound (being careful to remain within the confines of the 3x3 grid). I used a nested loop to iterate through only these neighbors, incrementing the counter when arriving at an active cell. Should the target cell also be active, I subtract 1 from the counter before returning a count of only active, neighbor cells.
