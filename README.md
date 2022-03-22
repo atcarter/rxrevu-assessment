@@ -6,6 +6,7 @@ Bonus: write a similar function that counts the neighbors of any given cell.
 
 Example: the below grid should return 3 using the center cell as the target.
 
-| | | X |
-| X | cell | X |
-| | | |
+|     |      | X   |
+| --- | ---- | --- |
+| X   | cell | X   |
+|     |      |     |
