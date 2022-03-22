@@ -11,3 +11,4 @@ Example: the below grid should return 3 using the center cell as the target.
 | X   | cell | X   |
 | --- | ---  | --- |
 |     |      |     |
+| --- | ---  | --- |
