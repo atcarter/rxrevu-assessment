@@ -77,4 +77,71 @@ for i in ex do
   puts "Bonus: For #{i} there is a count of #{neighbor_counter(0, 0, i)} around the top left cell."
 end
 
+#Start of Technical Interview 3/30
+example5 = [
+  [nil, nil, nil],
+  [nil, "X", nil],
+  [nil, nil, nil]
+]
+
+example6 = [
+  ["X", "X", nil],
+  [nil, "X", nil],
+  [nil, nil, nil]
+]
+
+example7 = [
+  ["X", "X", "X"],
+  [nil, "X", nil],
+  [nil, "X", nil]
+]
+
+example8 = [
+  ["X", "X", "X"],
+  [nil, "X", nil],
+  [nil, nil, nil]
+]
+
+def active?(cell)
+  cell == "X" ? true : false
+end
+
+def modify_grid(g)
+
+  grid = [
+  [nil, nil, nil],
+  [nil, nil, nil],
+  [nil, nil, nil]
+]
+
+  g.each_with_index do |row, index|
+    row.each_with_index do |cell, i|
+      if active?(cell) && neighbor_counter(index, i, g) < 2
+        grid[index][i] = nil
+
+      elsif active?(cell) && neighbor_counter(index, i, g) == 2 || neighbor_counter(index, i, g) == 3
+        grid[index][i] = "X"
+
+      elsif active?(cell) && neighbor_counter(index, i, g) > 3
+        grid[index][i] = nil
+
+      elsif !active?(cell) && neighbor_counter(index, i, g) == 3
+        grid[index][i] = "X"
+
+      else
+        
+      end
+    end
+  end 
+
+  return grid
+
+end
+
+ex2 = [example5, example6, example7, example8]
+
+for i in ex2 do
+  puts "For #{i} the answer is #{modify_grid(i)}"
+end
+
 
